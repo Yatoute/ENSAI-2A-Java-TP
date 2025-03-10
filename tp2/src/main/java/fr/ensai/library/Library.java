@@ -12,25 +12,24 @@ import java.util.Map;
 public class Library {
     //Attributs
     private String name;
-    private List <Book> books ;
+    private List <Item> items ;
 
     //Constructors
     public Library(String name){
         this.name = name ;
-        this.books = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
     // Méthode add a book to a library collection
-    public void addBook (Book book){
-        books.add(book);
+    public void addItem(Item item){
+        items.add(item);
     }
 
     // display Books
-    public void displayBooks(){
-        for (Book book : books){
-            book.toString();
-        }
+    public void displayItems() {
+        items.forEach(book -> System.out.println(book.toString()));
     }
+    
 
     // Load Books
     public void loadBooksFromCSV(String filePath) {
@@ -61,7 +60,7 @@ public class Library {
                     }
                     Book book = new Book(isbn, title, author, year, pageCount);
 
-                    this.addBook(book);
+                    this.addItem(book);
                 }
             }
         } catch (

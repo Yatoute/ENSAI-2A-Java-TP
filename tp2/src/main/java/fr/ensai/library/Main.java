@@ -22,14 +22,33 @@ public class Main {
         Library library = new Library("Library ENSAI");
 
         // Load books forom ./resources/books in the library
-        
         library.loadBooksFromCSV("books.csv");
 
         // Add new book in the library
+        library.addItem(fellowshipOfTheRing);
 
-        library.addBook(fellowshipOfTheRing);
+        //Create two Mangazine
+        Magazine magazine1 = new Magazine(
+        "National Geographic",
+        2023,
+        120,
+        "978-1-4262-1234-5",
+        "101"
+         );
+        library.addItem(magazine1);
+
+        Magazine magazine2 = new Magazine(
+        "Time Magazine",
+        2022,
+        95,
+        "978-0-7653-4567-8",
+        "202"
+         );
+
+        library.addItem(magazine2);
+
 
         // print all books
-        library.displayBooks();
+        library.displayItems();
     }
 }
