@@ -1,5 +1,8 @@
 package fr.ensai.library;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,5 +17,19 @@ public class Main {
                 423);
 
         System.out.println(fellowshipOfTheRing.toString());
+
+        // Create a new library
+        Library library = new Library("Library ENSAI");
+
+        // Load books forom ./resources/books in the library
+        
+        library.loadBooksFromCSV("books.csv");
+
+        // Add new book in the library
+
+        library.addBook(fellowshipOfTheRing);
+
+        // print all books
+        library.displayBooks();
     }
 }
